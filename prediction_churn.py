@@ -139,10 +139,11 @@ def prediction_app():
             # Tampilkan probabilitas Excited dan Churn (urut sesuai hasil prediksi)
             if pred == 1:
                 st.info(f"Probabilitas Nasabah Excited: {prob:.2%}")
-                st.caption(f"Probabilitas Nasabah Churn: {(1 - prob):.2%}")
+                st.error(f"Probabilitas Nasabah Churn: {(1 - prob):.2%}")
             else:
                 st.info(f"Probabilitas Nasabah Churn: {(1 - prob):.2%}")
-                st.caption(f"Probabilitas Nasabah Excited: {prob:.2%}")
+                st.error(f"Probabilitas Nasabah Excited: {prob:.2%}")
 
         except Exception as e:
             st.error(f"Terjadi kesalahan saat prediksi: {e}")
+
